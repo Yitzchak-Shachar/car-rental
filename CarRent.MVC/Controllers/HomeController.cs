@@ -15,6 +15,8 @@ namespace CarRent.MVC.Controllers
         public ActionResult Index()
         {
             return View();
+
+            //hello
         }
 
 
