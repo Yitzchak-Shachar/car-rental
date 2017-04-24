@@ -1,0 +1,18 @@
+﻿@using CarRent.MVC.Models   
+@model IEnumerable<CarTypeVM>
+
+@{
+    ViewBag.Title = "ShowCarTypes";
+    Layout = "~/Views/Shared/CarRentLayout.cshtml";
+}
+
+<h2>ShowCarTypes</h2>
+
+<div>
+    <ul>
+        @foreach (var type in Model)
+        {
+            <li>  ID=@type.CarTypeId , Manufctorer=@type.Manufacture </li>
+        }
+    </ul>
+</div>

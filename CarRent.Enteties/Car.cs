@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CarRent.Enteties
+{
+  public  class Car
+    {
+        public int CarId { get; set; }
+        public virtual CarType Type { get; set; }
+        public int Kilometrage { get; set; }
+        public byte[] Image { get; set; }
+        public bool RentalValid { get; set; }
+        public bool RentalVacant { get; set; }
+        public string LicenceNumber { get; set; }
+        public virtual Branch Branch { get; set; }
+
+        public virtual ICollection<RentDetails> Rents { get; set; }
+    }
+}

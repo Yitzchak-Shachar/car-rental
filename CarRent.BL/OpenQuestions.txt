@@ -1,0 +1,10 @@
+﻿1) is it required(if so,how should be done) to validate a FK field befor adding new table entry
+i.e.  add Car with non-existing CarTypeId
+2) on Xmanager should i have both Add andUpdate or single method?
+3)
+4)
+
+
+
+
+
