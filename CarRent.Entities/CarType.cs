@@ -15,7 +15,7 @@ namespace CarRent.Entities
         public double LateReturnDailyCost { get; set; }
         public int ManufactionYear { get; set; }
         public Gear  Gear { get; set; }
-
+        public string Description { get; set; }
         public virtual ICollection<Car> Cars { get; set; }
     }
 }

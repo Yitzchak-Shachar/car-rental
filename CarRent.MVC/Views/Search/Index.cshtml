@@ -1,0 +1,45 @@
+﻿@using CarRent.MVC.Models
+@model IEnumerable<CarVM>
+
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/CarRentLayout.cshtml";
+}
+
+<h2>Search for car</h2>
+
+<div class="container">
+    <label>Free search</label>
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for..." />
+    </div>
+    <label>Gear type</label>
+    <div class="input-group">
+        <select class="dropdown form-control">
+            <option value="#" selected>Select</option>
+            <option value="1">Manual</option>
+            <option value="2">Automatic</option>
+            <option value="3">Teptronic</option>
+        </select>
+    </div>
+    <label>Model type</label>
+    <div class="input-group">
+      @Html.DropDownList("model",)
+    </div>
+    <button class="btn btn-default"></button>
+
+
+    <ul class="list-inline">
+        @foreach (var carVM in Model)
+        {
+            <li class="list-group-item">
+                @Html.Partial("carView", carVM)
+                @*  for calculation ===><button class="btn btn-default"></button>*@
+            </li>
+        }
+
+    </ul>
+
+</div>

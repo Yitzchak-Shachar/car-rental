@@ -49,6 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201701020912573_InitialCreate.cs" />
+    <Compile Include="Migrations\201701020912573_InitialCreate.Designer.cs">
+      <DependentUpon>201701020912573_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RentContext.cs" />
   </ItemGroup>
@@ -61,6 +66,11 @@
       <Project>{9977c40e-7a53-4296-a962-5d497b018035}</Project>
       <Name>CarRent.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201701020912573_InitialCreate.resx">
+      <DependentUpon>201701020912573_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

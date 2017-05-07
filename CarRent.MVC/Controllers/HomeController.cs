@@ -11,9 +11,15 @@ namespace CarRent.MVC.Controllers
 {
     public class HomeController : Controller
     {
+     
+        public HomeController()
+        {
+                
+        }
         // GET: Home
         public ActionResult Index()
         {
+           // var CarModels = (new CarManager()).GetCars();
             return View();
 
             //hello
@@ -24,25 +30,25 @@ namespace CarRent.MVC.Controllers
         {
             var cm = new CarManager();
             var cars = cm.GetCars();
-            var ViewModals = cars.Select(car => new CarVM()
-            {
-                Type = car.CarType.ToString(),
-                LicenceNumber = car.LicenceNumber
-            });
+            var ViewModals = cars.Select(car => new CarVM(car));
+            //{
+            //    Type = car.CarType.ToString(),
+            //    LicenceNumber = car.LicenceNumber
+            //});
             return View(ViewModals);
         }
 
-        public ActionResult ShowCars()
-        {
-            var cm = new CarManager();
-            var cars = cm.GetCars();
-            var ViewModals = cars.Select(car => new CarVM()
-            {
-                Type = car.CarType.ToString(),
-                LicenceNumber = car.LicenceNumber
-            });
-            return View(ViewModals);
-        }
+        //public ActionResult ShowCars()
+        //{
+            //var cm = new CarManager();
+            //var cars = cm.GetCars();
+            //var ViewModals = cars.Select(car => new CarVM()
+            //{
+            //    Type = car.CarType.ToString(),
+            //    LicenceNumber = car.LicenceNumber
+            //});
+            //return View(ViewModals);
+        //}
 
         [HttpPost]
         public ActionResult AddCar(CarVM newCar)
