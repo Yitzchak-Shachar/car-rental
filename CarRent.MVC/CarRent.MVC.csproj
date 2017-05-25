@@ -95,11 +95,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\BootStrap\bootstrap.js" />
+    <Content Include="Scripts\BootStrap\bootstrap.min.js" />
+    <None Include="Scripts\jQuery\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jQuery\jquery-3.1.1.js" />
+    <Content Include="Scripts\jQuery\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jQuery\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jQuery\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\ViewsScripts\Search.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -120,12 +123,14 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\Shared\CarRentLayout.cshtml" />
-    <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\ChooseCar.cshtml" />
     <Content Include="Views\Home\ShowCarTypes.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\Search\carView.cshtml" />
+    <Content Include="Scripts\jQuery\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jQuery\jquery-3.1.1.min.map" />
+    <Content Include="Views\Search\Gears.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>

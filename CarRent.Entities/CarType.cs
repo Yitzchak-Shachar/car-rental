@@ -24,7 +24,7 @@ namespace CarRent.Entities
 {
     public enum Gear
     {
-        Automatic,
+        Automatic=1,
         Tiptronic,
         Manual
     }

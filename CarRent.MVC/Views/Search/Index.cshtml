@@ -1,8 +1,6 @@
 ﻿@using CarRent.MVC.Models
 @model IEnumerable<CarVM>
 
-
-
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/CarRentLayout.cshtml";
@@ -11,8 +9,7 @@
 <h2>Search for car</h2>
 
 <div class="container">
-    <div class="row">
-
+    <div class="row search-panel">
         <div class="col-md-3">
             <label>Free search</label>
             <div class="input-group">
@@ -24,29 +21,35 @@
 
             <div class="input-group">
                 <label>Gear type</label>
-                <select class="dropdown form-control">
-                    <option value="#" selected>Select</option>
-                    <option value="1">Manual</option>
-                    <option value="2">Automatic</option>
-                    <option value="3">Teptronic</option>
-                </select>
+                @*<select class="dropdown form-control">
+                        <option value="#" selected>Select</option>
+                        <option value="1">Manual</option>
+                        <option value="2">Automatic</option>
+                        <option value="3">Teptronic</option>
+                    </select>*@
+
+                @*@Html.DropDownList("carGearDD", (IEnumerable<SelectListItem>)ViewBag.listOfGearTypes, "==Select Gear==", new { @class = "dropdown form-control searcher" })*@
+              
+                
+                
+                  @Html.Partial("Gears", new CarTypeVM());
             </div>
         </div>
 
         <div class="col-md-3">
-
 
             <div class="input-group">
                 <label>Model type</label>
-                @Html.DropDownList("carModelDD", (IEnumerable<SelectListItem>)ViewBag.listOfCarTypes, "==Select Model==", new { @class = "dropdown form-control" })
+                @Html.DropDownList("carModelDD", (IEnumerable<SelectListItem>)ViewBag.listOfCarTypes, "==Select Model==", new { @class = "dropdown form-control searcher" })
             </div>
         </div>
         <div class="col-md-3">
-            <button class="btn btn-default">Search</button>
+            <button id="search-btn" class="btn btn-default">Search</button>
         </div>
     </div>
-
-    <ul class="list-inline">
+    
+    @*cars list*@
+    <ul id="car-list-displayed" class="list-inline">
         @foreach (var carVM in Model)
         {
             <li class="list-group-item">
@@ -58,3 +61,13 @@
     </ul>
 
 </div>
+
+
+
+
+
+<script src="~/Scripts/jQuery/jquery-3.1.1.min.js"></script>
+
+
+
+<script src="~/Scripts/ViewsScripts/Search.js"></script>

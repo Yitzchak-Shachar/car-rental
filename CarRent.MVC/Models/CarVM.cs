@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CarRent.BL;
+//using CarRent.BL;
 using CarRent.Entities;
 
 namespace CarRent.MVC.Models
