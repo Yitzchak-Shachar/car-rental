@@ -18,9 +18,9 @@
         </div>
 
         <div class="col-md-3">
-
             <div class="input-group">
                 <label>Gear type</label>
+                @*option1 for the DropDown - html coded*@
                 @*<select class="dropdown form-control">
                         <option value="#" selected>Select</option>
                         <option value="1">Manual</option>
@@ -28,17 +28,17 @@
                         <option value="3">Teptronic</option>
                     </select>*@
 
+                @*option2 for the DropDown - html helper using a ViewBagItem*@
                 @*@Html.DropDownList("carGearDD", (IEnumerable<SelectListItem>)ViewBag.listOfGearTypes, "==Select Gear==", new { @class = "dropdown form-control searcher" })*@
-              
-                
-                
+                              
+                @*option3 for the DropDown - html helper based on Enum, using partial*@
                   @Html.Partial("Gears", new CarTypeVM());
             </div>
         </div>
 
         <div class="col-md-3">
 
-            <div class="input-group">
+            <div class="input-group ModelTypeSelect">
                 <label>Model type</label>
                 @Html.DropDownList("carModelDD", (IEnumerable<SelectListItem>)ViewBag.listOfCarTypes, "==Select Model==", new { @class = "dropdown form-control searcher" })
             </div>
