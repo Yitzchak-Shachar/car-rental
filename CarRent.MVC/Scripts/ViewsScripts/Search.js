@@ -32,8 +32,9 @@ $(function () {
         error: printError
     }
     srch_btn.click(function () {
-        var caurrentId = $('.ModelTypeSelect :selected').attr('id');
-        var currentval = $('.ModelTypeSelect :selected').val();
+       // var caurrentId = $('.ModelTypeSelect :selected').attr('selected', 'selected').val();
+        var caurrentModelTypeSelection = $('.ModelTypeSelect :selected').attr('selected', 'selected');
+        var currentModelTypeval = caurrentModelTypeSelection.val();
         $.ajax(ajaxOptions)
     })
 });
