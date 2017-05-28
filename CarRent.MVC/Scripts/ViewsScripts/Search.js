@@ -25,16 +25,28 @@ $(function () {
         console.log('Fail to proccess function, got error:', status, err);
     }
     var ajaxOptions = {
-        url: '/data/GetCarsByCriterion',
+        url: '/Search/GetCarsByCriterion',
         cretiria:srch_selections,
         dataType: 'json',
         success: updateCarList,
         error: printError
     }
     srch_btn.click(function () {
-       // var caurrentId = $('.ModelTypeSelect :selected').attr('selected', 'selected').val();
-        var caurrentModelTypeSelection = $('.ModelTypeSelect :selected').attr('selected', 'selected');
-        var currentModelTypeval = caurrentModelTypeSelection.val();
+        // var caurrentId = $('.ModelTypeSelect :selected').attr('selected', 'selected').val();
+        var currentFreeTextSearch = $('.FreeSearchText input');
+        var currentFreeTextSearchSrting = currentFreeTextSearch.val();
+        var currentGearTypeSelection = $('.GearSelect :selected');
+        var currentGearTypeSelection = $('.GearSelect :selected').attr('selected', 'selected');
+        var currentGearTypeval = currentGearTypeSelection.val();
+        var currentModelTypeSelection = $('.ModelTypeSelect :selected').attr('selected', 'selected');
+        var currentModelTypeval = currentModelTypeSelection.val();
+
+        var myData = JSON.stringify({
+            'SearchGear': currentGearTypeval,
+            'SearchModel': currentModelTypeval,
+            'SearchText': currentFreeTextSearchSrting
+        });
+        ajaxOptions['data'] = myData;
         $.ajax(ajaxOptions)
     })
 });

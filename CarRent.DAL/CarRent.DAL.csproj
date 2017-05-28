@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="DB_Backup\CarRent.DAL.RentContext.bak" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

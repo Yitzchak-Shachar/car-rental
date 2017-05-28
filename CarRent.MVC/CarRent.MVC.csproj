@@ -108,6 +108,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -131,6 +132,7 @@
     <Content Include="Scripts\jQuery\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jQuery\jquery-3.1.1.min.map" />
     <Content Include="Views\Search\Gears.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>

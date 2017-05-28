@@ -66,6 +66,11 @@ namespace CarRent.BL
                 context.SaveChanges();
             }
         }
-        
+
+        public bool VerifyUserCredentials(string userName, string userPassword)
+        {
+            var foundUser = GetUsers().FirstOrDefault(u => (u.UserName == userName && u.Password == userPassword));
+           return (foundUser != null);
+        }
     }
 }

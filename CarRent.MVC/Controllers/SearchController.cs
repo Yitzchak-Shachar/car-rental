@@ -16,14 +16,14 @@ namespace CarRent.MVC.Controllers
         public SearchController()
         {
             carMgr = new CarManager();
-      carTypeMgr = new CarTypeManager();
+            carTypeMgr = new CarTypeManager();
         }
 
 
         // GET: Search
         public ActionResult Index()
         {
-           var allCars=  carMgr.GetCars().Select(car=>new CarVM(car));
+            var allCars = carMgr.GetCars().Select(car => new CarVM(car));
             var allCarTypes = carTypeMgr.GetCarTypes();//.Select(ctm => ctm.Manufacture);
             List<SelectListItem> listCarTypes = new List<SelectListItem>();
             List<SelectListItem> listCarGearTypes = new List<SelectListItem>();
@@ -31,12 +31,12 @@ namespace CarRent.MVC.Controllers
             //listCarGearTypes.AddRange( Enum.GetNames(typeof(Gear)).Select(gt => new SelectListItem() { Text = gt.ToString(), Value = ((int)(Enum.Parse((typeof(Gear)),gt))).ToString() }));
             ViewBag.listOfCarTypes = listCarTypes;
             ViewBag.listOfGearTypes = listCarGearTypes;
-            
+
 
             return View(allCars);
         }
 
-        public ActionResult GetCarsByCriterion(string cretiria)
+        public ActionResult GetCarsByCriterion(SearchCretiria cretiria)
         {
             var allCars = carMgr.GetCars().Select(car => new CarVM(car));
             //allCars.filterByCretiria(cretiria);
@@ -44,6 +44,14 @@ namespace CarRent.MVC.Controllers
             return Json(allCars, JsonRequestBehavior.AllowGet);
         }
 
+
+    }
+
+    public class SearchCretiria
+    {
+        string SearchGear;
+        string SearchModel;
+        string SearchText;
 
     }
 }
