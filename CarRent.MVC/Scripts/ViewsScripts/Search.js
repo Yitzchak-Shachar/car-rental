@@ -26,8 +26,11 @@ $(function () {
     }
     var ajaxOptions = {
         url: '/Search/GetCarsByCriterion',
-        cretiria:srch_selections,
+        //cretiria:srch_selections,
         dataType: 'json',
+        //  traditional: true,
+        // contentType:"application/json; charset=utf-8",
+        type: "POST",
         success: updateCarList,
         error: printError
     }
@@ -42,11 +45,19 @@ $(function () {
         var currentModelTypeval = currentModelTypeSelection.val();
 
         var myData = JSON.stringify({
-            'SearchGear': currentGearTypeval,
-            'SearchModel': currentModelTypeval,
-            'SearchText': currentFreeTextSearchSrting
+            Cretiria : {
+                'SearchGear': currentGearTypeval,
+                'SearchModel': currentModelTypeval,
+                'SearchText': currentFreeTextSearchSrting
+            }
         });
+        //ajaxOptions['data'] = { 'Cretiria': myData };
         ajaxOptions['data'] = myData;
+        //  ajaxOptions['Cretiria'] = {
+        //    'SearchGear': currentGearTypeval,
+        //    'SearchModel': currentModelTypeval,
+        //    'SearchText': currentFreeTextSearchSrting
+        //};
         $.ajax(ajaxOptions)
     })
 });

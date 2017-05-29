@@ -36,7 +36,9 @@ namespace CarRent.MVC.Controllers
             return View(allCars);
         }
 
-        public ActionResult GetCarsByCriterion(SearchCretiria cretiria)
+
+        [HttpPost]
+        public ActionResult GetCarsByCriterion(SearchVM Cretiria)
         {
             var allCars = carMgr.GetCars().Select(car => new CarVM(car));
             //allCars.filterByCretiria(cretiria);
@@ -47,11 +49,5 @@ namespace CarRent.MVC.Controllers
 
     }
 
-    public class SearchCretiria
-    {
-        string SearchGear;
-        string SearchModel;
-        string SearchText;
 
-    }
 }

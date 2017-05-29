@@ -117,6 +117,7 @@
     <Compile Include="Models\CarVM.cs" />
     <Compile Include="Models\CarTypeVM.cs" />
     <Compile Include="Models\RentDetailsVM.cs" />
+    <Compile Include="Models\SearchVM.cs" />
     <Compile Include="Models\UserVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
