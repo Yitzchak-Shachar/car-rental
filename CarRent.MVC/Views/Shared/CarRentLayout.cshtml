@@ -41,8 +41,23 @@
                     <li class="active"><a href="#">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="~/Login">Login</a></li>
+
+
+
                     @*TODO: align to right the login link*@
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <label>@User.Identity.Name !</label>
+                            <a href="~/Logout">Logout</a>
+                        }
+                        else
+                        {
+                            <a href="~/Login">Login</a>
+                        }
+                    </li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
@@ -50,13 +65,13 @@
 
     <div class="container">
 
-            @RenderBody()
+        @RenderBody()
 
 
-        </div><!-- /.container -->
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="~/Scripts/BootStrap/bootstrap.min.js"></script>
+    </div><!-- /.container -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="~/Scripts/BootStrap/bootstrap.min.js"></script>
 </body>
 </html>

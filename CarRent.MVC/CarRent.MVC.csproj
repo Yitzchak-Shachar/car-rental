@@ -103,7 +103,9 @@
     <Content Include="Scripts\jQuery\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jQuery\jquery-3.1.1.slim.min.js" />
     <Content Include="Scripts\ViewsScripts\Search.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -116,6 +118,7 @@
     <Compile Include="Models\BranchVM.cs" />
     <Compile Include="Models\CarVM.cs" />
     <Compile Include="Models\CarTypeVM.cs" />
+    <Compile Include="Models\LoginVM.cs" />
     <Compile Include="Models\RentDetailsVM.cs" />
     <Compile Include="Models\SearchVM.cs" />
     <Compile Include="Models\UserVM.cs" />

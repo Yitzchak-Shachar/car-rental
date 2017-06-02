@@ -40,7 +40,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +55,7 @@
     <Compile Include="CarManager.cs" />
     <Compile Include="CarTypeManager.cs" />
     <Compile Include="RentDetailsManager.cs" />
+    <Compile Include="SiteRoleProvider.cs" />
     <Compile Include="UsersManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

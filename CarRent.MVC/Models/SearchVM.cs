@@ -10,7 +10,10 @@ namespace CarRent.MVC.Models
         public string SearchGear { get; set; }
         public string SearchModel { get; set; }
         public string SearchText { get; set; }
+        public SearchVM()
+        {
 
+        }
         public SearchVM(SearchCretiria cretiria)
         {
             SearchGear = cretiria.SearchGear;

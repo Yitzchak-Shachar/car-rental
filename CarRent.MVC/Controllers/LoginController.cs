@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CarRent.BL;
+using CarRent.MVC.Models;
+using System.Web.Security;
+
 
 namespace CarRent.MVC.Controllers
 {
@@ -20,14 +23,35 @@ namespace CarRent.MVC.Controllers
             return View();
         }
 
-        public string CheckLogin(string user, string password)
+        public ActionResult CheckLogin(UserVM user)
         {
-            if (UsersManager.VerifyUserCredentials(user,password))
+            if (ModelState.IsValid)
             {
-            return "TRUE"; // how to return partial view to something to the lower fram?
 
+
+                FormsAuthentication.SetAuthCookie(user.UserName, false);
+
+                //if ()
+                //{
+                //return "TRUE"; // how to return partial view to something to the lower fram?
+
+                //}
+                //return "FALSE";
+                if (UsersManager.VerifyUserCredentials(user.GetUserVMAsUser()))
+                {
+                    return Redirect(FormsAuthentication.DefaultUrl);
+
+                }
+                else
+                {
+                    // return Redirect(FormsAuthentication.LoginUrl);
+                    return View("Index",user);
+                }
             }
-            return "FALSE";
+            else
+            {
+                return View("Index");
+            }
         }
     }
 }

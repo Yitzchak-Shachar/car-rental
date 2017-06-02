@@ -44,20 +44,16 @@ $(function () {
         var currentModelTypeSelection = $('.ModelTypeSelect :selected').attr('selected', 'selected');
         var currentModelTypeval = currentModelTypeSelection.val();
 
-        var myData = JSON.stringify({
-            Cretiria : {
+        //var myData = JSON.stringify({
+           var  Cretiria = {
                 'SearchGear': currentGearTypeval,
                 'SearchModel': currentModelTypeval,
                 'SearchText': currentFreeTextSearchSrting
             }
-        });
+        //});
         //ajaxOptions['data'] = { 'Cretiria': myData };
-        ajaxOptions['data'] = myData;
-        //  ajaxOptions['Cretiria'] = {
-        //    'SearchGear': currentGearTypeval,
-        //    'SearchModel': currentModelTypeval,
-        //    'SearchText': currentFreeTextSearchSrting
-        //};
+    //    ajaxOptions['data'] = myData;
+           ajaxOptions['data'] = Cretiria;
         $.ajax(ajaxOptions)
     })
 });
