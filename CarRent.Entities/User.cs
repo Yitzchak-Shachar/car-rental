@@ -22,6 +22,7 @@ namespace CarRent.Entities
         public string Password { get; set; }
         public byte[] Image { get; set; }
         public  virtual ICollection<RentDetails> Rents { get; set; }
+        public  virtual ICollection<Role> Roles { get; set; }
 
     }
 }

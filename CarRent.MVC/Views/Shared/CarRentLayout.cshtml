@@ -39,39 +39,37 @@
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
+                    <li><a href="~/Search">Search</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
-
-
-
-                    @*TODO: align to right the login link*@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <label>@User.Identity.Name !</label>
-                            <a href="~/Logout">Logout</a>
-                        }
-                        else
-                        {
-                            <a href="~/Login">Login</a>
-                        }
-                    </li>
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div>
-    </nav>
 
-    <div class="container">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><p class="navbar-text"><span class="glyphicon glyphicon-user icon-size"></span></p></li>
+                        <li><p class="navbar-text">@User.Identity.Name</p></li>
+                        <li>@*//:TODO ho to  space this*@</li>
+                        <li><a href="~/Login/Logout">Logout</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="~/Login">Login</a></li>
+                    }
+                    </ul>
+                </div><!--/.nav-collapse -->
+                </div>
+            </nav>
 
-        @RenderBody()
+            <div class="container">
+
+                @RenderBody()
 
 
-    </div><!-- /.container -->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="~/Scripts/BootStrap/bootstrap.min.js"></script>
-</body>
-</html>
+            </div><!-- /.container -->
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <!-- Include all compiled plugins (below), or include individual files as needed -->
+            <script src="~/Scripts/BootStrap/bootstrap.min.js"></script>
+        </body>
+    </html>

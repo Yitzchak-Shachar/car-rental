@@ -40,10 +40,32 @@ namespace CarRent.MVC.Controllers
         [HttpPost]
         public ActionResult GetCarsByCriterion(SearchVM Cretiria)
         {
-            var allCars = carMgr.GetCars().Select(car => new CarVM(car));
-            //allCars.filterByCretiria(cretiria);
+            //:TODO  why the Cretiria has duplicate fields?
 
-            return Json(allCars, JsonRequestBehavior.AllowGet);
+            //var allCars = carMgr.GetCars().Select(car => new CarVM(car));
+            //allCars.filterByCretiria(cretiria);
+            var allCarTypes = carTypeMgr.GetCarTypes();
+            var allMatchings3 = allCarTypes.Where(ct => ((int)ct.Gear).ToString() == Cretiria.SearchGear);
+            var allMatchings = allCarTypes.Where(ct =>
+            ((int)ct.Gear).ToString() == Cretiria.SearchGear ||
+            ct.CarTypeId.ToString() == Cretiria.SearchModel ||
+           ( string.IsNullOrEmpty(Cretiria.SearchText) ? false : ct.MatchText(Cretiria.SearchText))
+        );
+            List<CarType> allMatching2 = new List<CarType>();
+            foreach (CarType model in allCarTypes)
+            {
+                bool isIt = false;
+                isIt =isIt|| ((int)model.Gear).ToString() == Cretiria.SearchGear;
+                isIt =isIt|| model.CarTypeId.ToString() == Cretiria.SearchModel;
+                isIt =isIt|| string.IsNullOrEmpty(Cretiria.SearchText) ? false : model.MatchText(Cretiria.SearchText);
+                if (isIt)
+                {
+                    allMatching2.Add(model);
+                }
+            }
+            //   var allMatchingsText = allModels.Where(ct => ct.MatchText(Cretiria.SearchText) );
+
+            return Json(allCarTypes, JsonRequestBehavior.AllowGet);
         }
 
 

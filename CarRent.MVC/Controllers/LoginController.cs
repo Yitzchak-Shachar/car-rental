@@ -27,20 +27,12 @@ namespace CarRent.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-
-
                 FormsAuthentication.SetAuthCookie(user.UserName, false);
 
-                //if ()
-                //{
-                //return "TRUE"; // how to return partial view to something to the lower fram?
 
-                //}
-                //return "FALSE";
                 if (UsersManager.VerifyUserCredentials(user.GetUserVMAsUser()))
                 {
                     return Redirect(FormsAuthentication.DefaultUrl);
-
                 }
                 else
                 {
@@ -53,5 +45,26 @@ namespace CarRent.MVC.Controllers
                 return View("Index");
             }
         }
+
+        public ActionResult Logout()
+        {
+            if (ModelState.IsValid)
+            {
+                //:TODO
+                // check if user cart\actions are not completed and warn him?
+
+                FormsAuthentication.SignOut();
+                return Redirect(FormsAuthentication.DefaultUrl);
+
+            }
+            else
+            {
+
+                //where to send?? how do i set a default Error page for all trouble cases?
+                throw new HttpException("Problem XYZ");
+
+                //return View("Index");
+            }
+        }    
     }
 }

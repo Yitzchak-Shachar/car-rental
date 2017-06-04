@@ -5,21 +5,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Web.Security;
+using System.Reflection;
 
 namespace CarRent.BL
 {
     class SiteRoleProvider : RoleProvider
     {
+        private string applicationName=System.Reflection.Assembly.GetExecutingAssembly().GetName().ToString();
         public override string ApplicationName
         {
             get
             {
-                throw new NotImplementedException();
+                return applicationName;
             }
 
             set
             {
-                throw new NotImplementedException();
+               // throw new NotImplementedException();
             }
         }
 

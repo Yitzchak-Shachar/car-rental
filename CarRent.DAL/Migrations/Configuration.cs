@@ -9,8 +9,7 @@ namespace CarRent.DAL.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
-            ContextKey = "CarRent.DAL.RentContext";
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(CarRent.DAL.RentContext context)

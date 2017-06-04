@@ -11,6 +11,7 @@ namespace CarRent.DAL
   public  class RentContext : DbContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
         public DbSet<Car> Cars { get; set; }
         public DbSet<RentDetails> Rents { get; set; }
         public DbSet<Branch> Branches { get; set; }
