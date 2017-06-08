@@ -5,22 +5,16 @@ using System.Web;
 
 namespace CarRent.MVC.Models
 {
-    public class SearchVM 
+    public class ContainerVM
     {
         public string SearchGear { get; set; }
         public string SearchModel { get; set; }
         public string SearchText { get; set; }
-        public SearchVM()
+
+
+        public ContainerVM()
         {
 
-        }
-        public SearchVM(SearchCretiria cretiria)
-        {
-            SearchGear = cretiria.SearchGear;
-            SearchModel = cretiria.SearchModel;
-            SearchText = cretiria.SearchText;
         }
     }
-
-
 }

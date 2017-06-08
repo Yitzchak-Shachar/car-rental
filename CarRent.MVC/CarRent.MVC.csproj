@@ -118,6 +118,7 @@
     <Compile Include="Models\BranchVM.cs" />
     <Compile Include="Models\CarVM.cs" />
     <Compile Include="Models\CarTypeVM.cs" />
+    <Compile Include="Models\ContainerVM.cs" />
     <Compile Include="Models\LoginVM.cs" />
     <Compile Include="Models\RentDetailsVM.cs" />
     <Compile Include="Models\SearchVM.cs" />

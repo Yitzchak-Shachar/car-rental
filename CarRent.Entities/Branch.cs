@@ -11,6 +11,8 @@ namespace CarRent.Entities
         public int BranchId { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
+       public string newline { get; set; }
+
         public GeoLocation GeoLocation { get; set; }
         public virtual ICollection<Car> Cars { get; set; }
     }

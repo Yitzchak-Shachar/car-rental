@@ -13,10 +13,13 @@ namespace CarRent.MVC.Controllers
     public class LoginController : Controller
     {
         UsersManager UsersManager;
+        SiteRoleProvider RoleManager;
         public LoginController()
         {
             UsersManager = new UsersManager();
-        }
+            RoleManager = new SiteRoleProvider(); 
+                
+                }
         // GET: Login
         public ActionResult Index()
         {

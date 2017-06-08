@@ -6,12 +6,22 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Web.Security;
 using System.Reflection;
+using CarRent.DAL;
+using CarRent.Entities;
+
 
 namespace CarRent.BL
 {
-    class SiteRoleProvider : RoleProvider
+  public  class SiteRoleProvider : RoleProvider
     {
-        private string applicationName=System.Reflection.Assembly.GetExecutingAssembly().GetName().ToString();
+
+        public SiteRoleProvider()
+        {
+            applicationName = System.Reflection.Assembly.GetExecutingAssembly().GetName().ToString();
+                      
+        }
+
+        private string applicationName;
         public override string ApplicationName
         {
             get
@@ -29,8 +39,14 @@ namespace CarRent.BL
 
         public override void AddUsersToRoles(string[] usernames, string[] roleNames)
         {
-            throw new NotImplementedException();
-        }
+            if (usernames==null||usernames.Length==0)
+            {
+                throw new Exception("UserNames array cannot be null or empty");
+            }
+       if (roleNames == null|| roleNames.Length==0)
+            {
+                throw new Exception("roleNames array cannot be null or empty");
+            }  }
 
         public override void CreateRole(string roleName)
         {
@@ -76,7 +92,14 @@ namespace CarRent.BL
         // ################ do also this
         public override bool RoleExists(string roleName)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(roleName))
+            {
+                throw new Exception("RoleName cannot be null or empty");
+            }
+            using (var context = new RentContext())
+            {
+                return context.Roles.Count( (role => role.RoleName == roleName))<0;
+            }
         }
     }
 }

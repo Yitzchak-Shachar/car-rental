@@ -21,8 +21,12 @@ namespace CarRent.Entities
         public string EmailAddress { get; set; }
         public string Password { get; set; }
         public byte[] Image { get; set; }
+
+
+        public int RoleId { get; set; }
+        public  virtual Role Roles { get; set; }
+
         public  virtual ICollection<RentDetails> Rents { get; set; }
-        public  virtual ICollection<Role> Roles { get; set; }
 
     }
 }
