@@ -29,34 +29,38 @@ $(function () {
 
         for (var i = 0; i < resp.length; i++) {
             var newRow = $('.new-car').clone().removeClass('new-car');
-            newRow.find('.ID span').text(prodArray[i].ID);
-            for (var propName in prodArray[i]) {
-                newRow.find('td.' + propName).find('input').val(prodArray[i][propName]);
-            }
-            newRow.find('.CategoryID').find('option[value="' + prodArray[i].CategoryID + '"]').prop('selected', true);
-            newRow.find('.SupplierID').find('option[value="' + prodArray[i].SupplierID + '"]').prop('selected', true);
-            newRow.find('button').text('Update');
-            newRow.appendTo('tbody');
+            var newElemValues = {"a":"b","c":"d"};
+            $("<div>", newElemValues).appendTo(newRow);
+            //newRow.find('.ID span').text(resp[i].ID);
+
+
+            //for (var propName in resp[i]) {
+            //    newRow.find('td.' + propName).find('input').val(resp[i][propName]);
+            //}
+            //newRow.find('.CategoryID').find('option[value="' + resp[i].CategoryID + '"]').prop('selected', true);
+            //newRow.find('.SupplierID').find('option[value="' + resp[i].SupplierID + '"]').prop('selected', true);
+            //newRow.find('button').text('Update');
+            newRow.appendTo('.car-list-displayed');
         }
 
 
 
     }
 
-    $(function () {
-        $.getJSON('@Url.Action("GetProducts")', function (prodArray) {
-            for (var i = 0; i < prodArray.length; i++) {
-                var newRow = $('.new-product').clone().removeClass('new-product');
-                newRow.find('.ID span').text(prodArray[i].ID);
-                for (var propName in prodArray[i]) {
-                    newRow.find('td.' + propName).find('input').val(prodArray[i][propName]);
-                }
-                newRow.find('.CategoryID').find('option[value="' + prodArray[i].CategoryID + '"]').prop('selected', true);
-                newRow.find('.SupplierID').find('option[value="' + prodArray[i].SupplierID + '"]').prop('selected', true);
-                newRow.find('button').text('Update');
-                newRow.appendTo('tbody');
-            }
-        });
+    //$(function () {
+    //    $.getJSON('@Url.Action("GetProducts")', function (prodArray) {
+    //        for (var i = 0; i < prodArray.length; i++) {
+    //            var newRow = $('.new-product').clone().removeClass('new-product');
+    //            newRow.find('.ID span').text(prodArray[i].ID);
+    //            for (var propName in prodArray[i]) {
+    //                newRow.find('td.' + propName).find('input').val(prodArray[i][propName]);
+    //            }
+    //            newRow.find('.CategoryID').find('option[value="' + prodArray[i].CategoryID + '"]').prop('selected', true);
+    //            newRow.find('.SupplierID').find('option[value="' + prodArray[i].SupplierID + '"]').prop('selected', true);
+    //            newRow.find('button').text('Update');
+    //            newRow.appendTo('tbody');
+    //        }
+    //    });
     })
 
 
