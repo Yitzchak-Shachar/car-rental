@@ -13,6 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRent.Entities", "CarRent
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRent.MVC", "CarRent.MVC\CarRent.MVC.csproj", "{E278D248-EDA8-4759-A3FC-4FFB6915D1C4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB bkup", "DB bkup", "{2586DF2D-6B1F-4CDE-A162-C54FD9894EB6}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\Program Files\Microsoft SQL Server\MSSQL13.SQLEXPRESS\MSSQL\Backup\CarRent.DAL.RentContext.bak = ..\..\..\..\..\Program Files\Microsoft SQL Server\MSSQL13.SQLEXPRESS\MSSQL\Backup\CarRent.DAL.RentContext.bak
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

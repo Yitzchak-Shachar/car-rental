@@ -40,7 +40,7 @@ $(function () {
             //newRow.find('.CategoryID').find('option[value="' + resp[i].CategoryID + '"]').prop('selected', true);
             //newRow.find('.SupplierID').find('option[value="' + resp[i].SupplierID + '"]').prop('selected', true);
             //newRow.find('button').text('Update');
-            newRow.appendTo('.car-list-displayed');
+            newRow.appendTo('#car-list-displayed');
         }
 
 
@@ -61,7 +61,7 @@ $(function () {
     //            newRow.appendTo('tbody');
     //        }
     //    });
-    })
+    //})
 
 
 
