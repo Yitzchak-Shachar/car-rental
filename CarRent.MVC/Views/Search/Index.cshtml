@@ -31,7 +31,7 @@
                 @*@Html.DropDownList("carGearDD", (IEnumerable<SelectListItem>)ViewBag.listOfGearTypes, "==Select Gear==", new { @class = "dropdown form-control searcher" })*@
                               
                 @*option3 for the DropDown - html helper based on Enum, using partial*@
-                  @Html.Partial("Gears", new CarTypeVM());
+                  @Html.Partial("Gears", new CarTypeVM())
             </div>
         </div>
 
@@ -49,14 +49,18 @@
     
     @*cars list*@
     <ul id="car-list-displayed" class="list-inline">
-        @foreach (var carVM in Model)
-        {
-            <li class="list-group-item">
-                @Html.Partial("carView", carVM)
-                @*  for calculation ===><button class="btn btn-default"></button>*@
+      @*  @foreach (var carVM in Model)
+    {
+        <li class="list-group-item">
+            @Html.Partial("carView", carVM)
+           for calculation ===><button class="btn btn-default"></button>
             </li>
-        }
-
+         
+        } 
+        *@
+        <li class="new-car">
+            @Html.Partial("carView", Model.ElementAtOrDefault(0))
+        </li>
     </ul>
 
 </div>

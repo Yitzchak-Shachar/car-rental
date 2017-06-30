@@ -14,12 +14,7 @@ namespace CarRent.MVC.Models
         {
 
         }
-        public SearchVM(SearchCretiria cretiria)
-        {
-            SearchGear = cretiria.SearchGear;
-            SearchModel = cretiria.SearchModel;
-            SearchText = cretiria.SearchText;
-        }
+
     }
 
 

@@ -45,27 +45,29 @@ namespace CarRent.MVC.Controllers
             //var allCars = carMgr.GetCars().Select(car => new CarVM(car));
             //allCars.filterByCretiria(cretiria);
             var allCarTypes = carTypeMgr.GetCarTypes();
-            var allMatchings3 = allCarTypes.Where(ct => ((int)ct.Gear).ToString() == Cretiria.SearchGear);
+            var allMatchings3 = allCarTypes.Where(ct => ((int)ct.Gear).ToString() == container.SearchGear);
             var allMatchings = allCarTypes.Where(ct =>
-            ((int)ct.Gear).ToString() == container.SearchGear ||
-            ct.CarTypeId.ToString() == container.SearchModel ||
-           (string.IsNullOrEmpty(container.SearchText) ? false : ct.MatchText(container.SearchText))
-        );
+                    ((int)ct.Gear).ToString() == container.SearchGear ||
+                    ct.CarTypeId.ToString() == container.SearchModel ||
+                   (string.IsNullOrEmpty(container.SearchText) ? false : ct.MatchText(container.SearchText))
+            );
+            
             List<CarType> allMatching2 = new List<CarType>();
             foreach (CarType model in allCarTypes)
             {
                 bool isIt = false;
                 isIt = isIt || ((int)model.Gear).ToString() == container.SearchGear;
                 isIt = isIt || model.CarTypeId.ToString() == container.SearchModel;
-                isIt = isIt || string.IsNullOrEmpty(container.SearchText) ? false : model.MatchText(container.SearchText);
+              
+                isIt = isIt || (string.IsNullOrEmpty(container.SearchText) ? false : model.MatchText(container.SearchText));
                 if (isIt)
                 {
                     allMatching2.Add(model);
                 }
             }
             //   var allMatchingsText = allModels.Where(ct => ct.MatchText(Cretiria.SearchText) );
-
-            return Json(allCarTypes, JsonRequestBehavior.AllowGet);
+            List<CarTypeVM> jsonRetVal = allMatching2.Select(ct=>new CarTypeVM(ct)).ToList();
+            return Json(jsonRetVal, JsonRequestBehavior.AllowGet);
         }
 
 

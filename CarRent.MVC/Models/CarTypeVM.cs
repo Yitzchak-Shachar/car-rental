@@ -16,8 +16,7 @@ namespace CarRent.MVC.Models
         public double DailyCost { get; set; }
         public double LateReturnDailyCost { get; set; }
         public Gear Gear { get; set; }
-
-        public virtual ICollection<CarVM> Cars { get; set; }
+       // public virtual ICollection<CarVM> Cars { get; set; }
 
         public CarTypeVM()
         {
